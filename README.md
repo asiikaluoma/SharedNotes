@@ -4,6 +4,8 @@ Sovelluksella käyttäjät voivat luoda jaettuja muistioita, jotka sisältävät
 
 Tietokantakaavio: [Linkki](https://github.com/asiikaluoma/SharedNotes/blob/master/dokumentaatio/tietokantakaavio.png)
 
+Sovellus Herokussa: [Linkki](https://shared-notes.herokuapp.com)
+
 ## Käyttötapaukset
 
 ### Käyttöoikeudet
