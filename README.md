@@ -1,18 +1,29 @@
 # SharedNotes
 
-Sovelluksella käyttäjät voivat luoda jaettuja muistiinpanoja. Käyttäjä voi jakaa muistiinpanon useamman käyttäjän kanssa. Muistiinpanohin voi lisätä alimuistiinpanoja. 
+Sovelluksella käyttäjät voivat luoda jaettuja muistioita, jotka sisältävät useita muistiinpano. Käyttäjä voi jakaa muistion useamman käyttäjän kanssa. Muistioihin lisätään muistiinpanoja. 
 
 Tietokantakaavio: [Linkki](https://github.com/asiikaluoma/SharedNotes/blob/master/dokumentaatio/tietokantakaavio.png)
 
-## Käyttäjät
+## Käyttötapaukset
 
-Muistiinpanon luonut käyttäjä on pääkäyttäjä. Pääkäyttäjä on ainoa joka voi poistaa muistiinpanon. Muistiinpanon poisto poistaa myös kaikki alimuistiinpanot. Jaetut käyttäjät voivat lisätä alimuistiinpanoja, muokata alimuistiinpanoja ja poistaa itse luomansa alimuistiinpanot. 
+### Käyttöoikeudet
 
-Päämuistiinpano sisältää otsikon, kuvauksen sekä listauksen alimuistiinpanoista. Alimuistiinpano sisältää otsikon sekä rungon (teksti, otsikot, yms...) 
+- Muistion luonut käyttäjä on sen omistaja. 
+- Omistaja on ainoa joka voi poistaa muistion. 
+- Muistion poisto poistaa myös kaikki muistiinpanot. 
+- Käyttäjät joille jaettiu oikeudet voivat lisätä muistiinpanoja, muokata muistiinpanoja ja poistaa itse lehtiöön luomansa muistiinpanot. 
 
-Päämuistinpanon tiedoissa näytetään: alimuistiinpanojen lukumäärä, keskiverto merkkien määrä, viimeksi muokattu, käyttäjät.
+### Ominaisuudet
 
+- Kirjautuneen käyttäjän etusivulla listaus muistioista sekä viimeisimmistä muistiinpanoista (max. 10).
+- Muistiota klikkaamalla päästään sen näkymään
+- Näkumä sisältää otsikon, kuvauksen sekä listauksen muistiosta. 
+- Kentät ovat muokattavissa omistajan toimesta
+- Näkymän tiedoissa näytetään myös: musitiinpanojen lukumäärä, keskiverto merkkien määrä, viimeksi muokattu, käyttäjät
+- Muistiinpanolistauksesta siirrytään muistiinpanon näkymään
+- Kentät ovat muokattavissa
+- Itse muistiinpano sisältää otsikon sekä rungon (teksti, otsikot, yms...).
 
 ## Jatkokehitys
 
-Muistiinpanojen versiointi eli voidaan katsella muutoshistoriaa. # SharedNotes
+Muistiinpanojen versiointi eli voidaan katsella muutoshistoriaa.
