@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <a href="{{ url_for('notes_new', notebook_id=notebook_id) }}">Add a note</a>
+  <table>
+    <tr>
+      <th>title</th>
+      <th>last update</th>
+    </tr>
+    {% for note in notes %}
+    <tr>
+      <td>{{ note.title }}</td>
+      <td>{{ note.date_modified }}</td>
+      <td><a href="{{ url_for('notes', notebook_id=notebook_id, note_id=note.id) }}">Linkki</a> </td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+  
+{% block body %}
+<form method="POST" action="{{ url_for('notes_create', notebook_id=notebook_id) }}">
+  <input type="text" name="title"/>
+  <textarea name="body"></textarea>
+  <input type="submit" value="Create a new note"/>
+</form>
+{% endblock %}

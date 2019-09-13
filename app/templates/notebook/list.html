@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <table>
+    <tr>
+      <th>title</th>
+      <th>last update</th>
+    </tr>
+    {% for notebook in notebooks %}
+    <tr>
+      <td>{{ notebook.title }}</td>
+      <td>{{ notebook.date_modified }}</td>
+      <td><a href="{{ url_for('notebook_notes', notebook_id=notebook.id) }}">Linkki</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
