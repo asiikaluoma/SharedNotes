@@ -11,7 +11,8 @@
     <tr>
       <td>{{ note.title }}</td>
       <td>{{ note.date_modified }}</td>
-      <td><a href="{{ url_for('notes', notebook_id=notebook_id, note_id=note.id) }}">Linkki</a> </td>
+      <td><a href="{{ url_for('notes_view', notebook_id=notebook_id, note_id=note.id) }}">Avaa</a> </td>
+      <td><form action="{{ url_for('notes_delete', notebook_id=notebook_id, note_id=note.id) }}" method="POST"><button type="submit">Poista</button></form></td>
     </tr>
     {% endfor %}
   </table>
