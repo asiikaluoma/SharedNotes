@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 
 {% block body %}
+  <a href="{{ url_for('notebook_index') }}">Takaisin</a>
   <a href="{{ url_for('notes_new', notebook_id=notebook_id) }}">Add a note</a>
   <table>
     <tr>

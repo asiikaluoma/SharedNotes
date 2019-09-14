@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 
 {% block body %}
+  <a href="{{ url_for('notebook_notes', notebook_id=notebook_id, note_id=note.id) }}">Takaisin</a>
   <h1>{{ note.title }}</h1>
   <p>{{ note.body }}</p>
   <a href="{{ url_for('notes_new_edit', note_id=note.id) }}">Edit</a>

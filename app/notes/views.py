@@ -9,7 +9,7 @@ def notebook_notes(notebook_id):
 
 @app.route("/notebook/<notebook_id>/notes/<note_id>", methods=["GET"])
 def notes_view(notebook_id, note_id):
-    return render_template("notes/index.html", note=Note.query.get(note_id))
+    return render_template("notes/index.html", notebook_id=notebook_id, note=Note.query.get(note_id))
 
 @app.route("/notebook/<notebook_id>/notes/new")
 def notes_new(notebook_id):

@@ -17,13 +17,14 @@ Sovellus Herokussa: [Linkki](https://shared-notes.herokuapp.com)
 
 ### Ominaisuudet
 
-- Kirjautuneen käyttäjän etusivulla listaus muistioista sekä viimeisimmistä muistiinpanoista (max. 10).
+- Kirjautuneen käyttäjän etusivulla listaus muistioista sekä niiden alla listaus niihin kuuluvista viimeisimmistä muistiinpanoista (max. 10).
 - Muistiota klikkaamalla päästään sen näkymään
 - Näkumä sisältää otsikon, kuvauksen sekä listauksen muistiosta. 
 - Kentät ovat muokattavissa omistajan toimesta
 - Näkymän tiedoissa näytetään myös: musitiinpanojen lukumäärä, keskiverto merkkien määrä, viimeksi muokattu, käyttäjät
-- Muistiinpanolistauksesta siirrytään muistiinpanon näkymään
-- Kentät ovat muokattavissa
+- Kaikki listauksesta ovat lajiteltu viimeisen muokkauksen mukaan
+- Muistiinpanolistauksesta siirrytään muistiinpanoa kliikkammalla sen omaan näkymään
+- Kentät ovat muistiinpanon näkymässä muokattavissa
 - Itse muistiinpano sisältää otsikon sekä rungon (teksti, otsikot, yms...).
 
 ## Jatkokehitys
