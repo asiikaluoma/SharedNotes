@@ -8,6 +8,9 @@ class Notebook(db.Model):
 
     title = db.Column(db.String(255), nullable=False)
 
+    account_id = db.Column(db.Integer, db.ForeignKey('account.id'),
+                           nullable=False)
+
     def __init__(self, title):
         self.title = title
         self.done = False
