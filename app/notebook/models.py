@@ -7,10 +7,12 @@ class Notebook(db.Model):
     onupdate=db.func.current_timestamp())
 
     title = db.Column(db.String(255), nullable=False)
+    description = db.Column(db.String(1000), nullable=True)
 
     account_id = db.Column(db.Integer, db.ForeignKey('account.id'),
                            nullable=False)
 
-    def __init__(self, title):
+    def __init__(self, title, description):
         self.title = title
+        self.description = description
         self.done = False

@@ -23,7 +23,7 @@ def notebook_create():
     if not form.validate():
         return render_template("notebook/new.html", form=form)
 
-    notebook = Notebook(form.title.data)
+    notebook = Notebook(form.title.data, form.description.data)
     notebook.account_id = current_user.id
 
     db.session().add(notebook)

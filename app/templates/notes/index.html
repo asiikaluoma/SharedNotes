@@ -1,8 +1,18 @@
 {% extends "layout.html" %}
 
 {% block body %}
-  <a href="{{ url_for('notebook_notes', notebook_id=notebook_id, note_id=note.id) }}">Takaisin</a>
-  <h1>{{ note.title }}</h1>
-  <p>{{ note.body }}</p>
-  <a href="{{ url_for('notes_new_edit', note_id=note.id) }}">Edit</a>
+  <a class="btn btn-primary" href="{{ url_for('notebook_notes', notebook_id=notebook_id, note_id=note.id) }}">Takaisin</a>
+  <hr class="my-4">
+
+  <div class="row justify-content-center">
+  <div class="my-3 p-3 bg-white rounded box-shadow col-md-10">
+      <h3 class="border-bottom border-gray pb-2 mb-0">{{ note.title }}</h3>
+      <div class="media text-muted pt-3">
+        <p class="media-body pb-3 mb-0 lh-125 text-justify">
+          {{ note.body }}
+        </p>
+      </div>
+      <a class="btn btn-primary" href="{{ url_for('notes_new_edit', note_id=note.id) }}">Edit</a>
+    </div>
+  </div>
 {% endblock %}

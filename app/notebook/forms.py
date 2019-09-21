@@ -3,6 +3,7 @@ from wtforms import StringField, validators
 
 class NotebookForm(FlaskForm):
     title = StringField("Notebook title", [validators.Length(min=1)])
+    description = StringField("Description", [validators.Length(min=1)])
  
     class Meta:
         csrf = False
