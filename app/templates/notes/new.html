@@ -1,9 +1,32 @@
 {% extends "layout.html" %}
   
 {% block body %}
-<form method="POST" action="{{ url_for('notes_create', notebook_id=notebook_id) }}">
-  <input type="text" name="title"/>
-  <textarea name="body"></textarea>
-  <input type="submit" value="Create a new note"/>
-</form>
+<div class="row">
+  <div>
+        <form method="POST" action="{{ url_for('notes_create', notebook_id=notebook_id) }}">
+              <table>
+                    <tr>
+                          <td>
+                                {{ form.title.label }}
+                          </td>
+                          <td>
+                                {{ form.title }}
+                          </td>
+                    </tr>
+                    <tr>
+                          <td>
+                                {{ form.body.label }}
+                          </td>
+                          <td>
+                                {{ form.body }}
+                          </td>
+                    </tr>
+                    <tr>
+                          <td colspan="2">
+                                <input class="btn btn-secondary" type="submit" value="Create note" />
+                          </td>
+                    </tr>
+        </form>
+  </div>
+</div>
 {% endblock %}

@@ -9,10 +9,10 @@ class Notebook(db.Model):
     title = db.Column(db.String(255), nullable=False)
     description = db.Column(db.String(1000), nullable=True)
 
-    account_id = db.Column(db.Integer, db.ForeignKey('account.id'),
+    owner_id = db.Column(db.Integer, db.ForeignKey('account.id'),
                            nullable=False)
+    users = db.relationship("UserNotebook", back_populates="child")
 
     def __init__(self, title, description):
         self.title = title
         self.description = description
-        self.done = False

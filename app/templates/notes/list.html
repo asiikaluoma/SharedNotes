@@ -1,8 +1,9 @@
 {% extends "layout.html" %}
 
 {% block body %}
-  <a class="btn btn-primary" href="{{ url_for('notebook_index') }}">Takaisin</a>
+  <a class="btn btn-primary" href="{{ url_for('notebook_index') }}">Back</a>
   <a class="btn btn-primary" href="{{ url_for('notes_new', notebook_id=notebook_id) }}">Add a note</a>
+  <a class="btn btn-primary" href="{{ url_for('notebook_new_edit', notebook_id=notebook_id) }}">Edit notebook</a>
   <hr class="my-4">
 
   {% for note in notes %}
@@ -10,20 +11,21 @@
       <h4 class="border-bottom border-gray pb-2 mb-0">{{ note.title }}</h4>
       <div class="media text-muted pt-3">
         <p class="media-body pb-3 mb-0 lh-125">
-          {{ note.body }}
+          {{ note.body[:100] + " ..." }}
         </p>
         <small class="d-block text-right mt-3">
-            <a href="{{ url_for('notes_view', notebook_id=notebook_id, note_id=note.id) }}">Avaa</a>
+            <a href="{{ url_for('notes_view', notebook_id=notebook_id, note_id=note.id) }}">Open</a>
           </small>
       </div>
       <div>
         <small class="d-block small text-gray-dark"><b>Last modified:</b> {{ note.date_modified }}</small>
+        <form action="{{ url_for('notes_delete', notebook_id=notebook_id, note_id=note.id) }}" method="POST"><button type="submit" class="btn btn-secondary btn-sm">Delete</button></form>
       </div>
     </div>
   {% endfor %}
   {% if notes[0] is defined %}
   {% else %}
-  <h5>No notebooks</h5>
+  <h5>No notes!</h5>
   {% endif %}
 
   <!--<table>
