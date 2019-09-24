@@ -12,6 +12,7 @@ class Notebook(db.Model):
     owner_id = db.Column(db.Integer, db.ForeignKey('account.id'),
                            nullable=False)
     users = db.relationship("UserNotebook", back_populates="child")
+    notes = db.relationship("Note", backref='note', lazy=True)
 
     def __init__(self, title, description):
         self.title = title

@@ -19,7 +19,8 @@
       </div>
       <div>
         <small class="d-block small text-gray-dark"><b>Last modified:</b> {{ note.date_modified }}</small>
-        <form action="{{ url_for('notes_delete', notebook_id=notebook_id, note_id=note.id) }}" method="POST"><button type="submit" class="btn btn-secondary btn-sm">Delete</button></form>
+        <small class="d-block small text-gray-dark"><b>Created by:</b> <span class="badge badge-secondary">{{ note.creator }}</span></small>
+        <form style="margin-top:10px;" action="{{ url_for('notes_delete', notebook_id=notebook_id, note_id=note.id) }}" method="POST"><button type="submit" class="btn btn-secondary btn-sm">Delete</button></form>
       </div>
     </div>
   {% endfor %}
