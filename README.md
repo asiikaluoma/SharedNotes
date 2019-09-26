@@ -6,6 +6,9 @@ Tietokantakaavio: [Linkki](https://github.com/asiikaluoma/SharedNotes/blob/maste
 
 Sovellus Herokussa: [Linkki](https://shared-notes.herokuapp.com)
 
+Käyttäjä: testi
+Salasana: testi
+
 ## Käyttötapaukset
 
 ### Käyttöoikeudet
