@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 
 {% block body %}
+  <h3 style="margin-bottom:20px;">{{ notebook.title }}</h3>
   <a class="btn btn-primary" href="{{ url_for('notebook_index') }}">Back</a>
   <a class="btn btn-primary" href="{{ url_for('notes_new', notebook_id=notebook_id) }}">Add a note</a>
   <a class="btn btn-primary" href="{{ url_for('notebook_new_edit', notebook_id=notebook_id) }}">Edit notebook</a>

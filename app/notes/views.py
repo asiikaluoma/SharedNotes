@@ -9,10 +9,12 @@ from flask_login import login_required, current_user
 
 @app.route("/notebook/<notebook_id>/notes", methods=["GET"])
 def notebook_notes(notebook_id):
-    notes = Notebook.query.get(notebook_id).notes
+    nb = Notebook.query.get(notebook_id)
+    notes = nb.notes
     for note in notes:
-        note.creator = User.query.get(note.id).username
-    return render_template("notes/list.html", notes=Notebook.query.get(notebook_id).notes, notebook_id=notebook_id)
+        note.creator = User.query.get(note.creator_id).username
+    notes.sort(key=lambda r: r.date_modified, reverse=True)
+    return render_template("notes/list.html", notebook=nb, notes=notes, notebook_id=notebook_id)
 
 @app.route("/notebook/<notebook_id>/notes/<note_id>", methods=["GET"])
 def notes_view(notebook_id, note_id):

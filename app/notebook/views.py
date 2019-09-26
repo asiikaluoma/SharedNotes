@@ -49,11 +49,13 @@ def notebook_new_edit(notebook_id):
     is_owner = False
     if current_user.id == n.owner_id:
         is_owner = True
+    
+    error_param = request.args.get("error")
 
     form = NotebookForm()
     form.title.data = n.title
     form.description.data = n.description
-    return render_template("notebook/edit.html", notebook=n, form=form, is_owner=is_owner)
+    return render_template("notebook/edit.html", notebook=n, form=form, is_owner=is_owner, error=error_param)
 
 
 @app.route("/notebook/<notebook_id>/user", methods=["POST"])
@@ -66,7 +68,10 @@ def notebook_add_user(notebook_id):
     user = User.query.filter_by(username=username).first()
 
     if user is None:
-        return redirect(url_for('notebook_new_edit', notebook_id=notebook_id))
+        return redirect(url_for('notebook_new_edit', notebook_id=notebook_id, error="User not found."))
+    
+    if any(x.notebook_id == notebook_id for x in user.notebooks):
+        return redirect(url_for('notebook_new_edit', notebook_id=notebook_id, error="User already added."))
 
     a = UserNotebook()
     a.account_id = user.id

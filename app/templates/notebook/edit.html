@@ -52,6 +52,9 @@
             {% for user in  notebook.users %}
             <span style="padding: 10px" class="badge badge-secondary">{{ user.parent.username }}</span>
             {% endfor %}
+            {% if error is not none %}
+            <p style="color:red">{{ error }}</p>
+            {% endif %}
       </div>
 </div>
 {% endif %}
