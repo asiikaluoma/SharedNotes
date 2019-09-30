@@ -90,7 +90,7 @@ def notebook_edit(notebook_id):
     if not form.validate():
         return render_template("notebook/edit.html", form=form)
 
-    n = Notebook.query.get(note_id)
+    n = Notebook.query.get(notebook_id)
     n.title = form.title.data
     n.description = form.description.data
 

@@ -69,4 +69,4 @@ def notes_edit(note_id):
 
     db.session().commit()
 
-    return redirect(url_for('notes_view', notebook_id=1, note_id=note_id))
+    return redirect(url_for('notes_view', notebook_id=note.notebook_id, note_id=note_id))
