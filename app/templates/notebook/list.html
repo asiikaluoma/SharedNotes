@@ -2,32 +2,72 @@
 
 {% block body %}
 <h5>All notebooks</h5>
-<hr class="my-4">
-  {% for notebook in notebooks %}
-  <div class="my-3 p-3 bg-white rounded box-shadow col-md-8">
-      <h4 class="border-bottom border-gray pb-2 mb-0">{{ notebook.title }}</h4>
-      <div class="media text-muted pt-3">
-        <p class="media-body pb-3 mb-0 lh-125">
-          {{ notebook.description }}
-        </p>
-        <small class="d-block text-right mt-3">
-            <a href="{{ url_for('notebook_notes', notebook_id=notebook.id) }}">Check notebook</a>
-          </small>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Statistics
+</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Notebook Statistics</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <div>
-        <small class="d-block small text-gray-dark"><b>Last modified:</b> {{ notebook.date_modified }}</small>
-        <small class="d-block small text-gray-dark"><b>Note count:</b> {{ notebook.find_note_count(notebook.id) }}</small>
-        <small class="d-block small text-gray-dark"><b>Users:</b>
-          {% for u in notebook.users %}
-            <span class="badge badge-secondary">{{ u.parent.username }}</span>
-          {% endfor %}
-        </small>
+      <div class="modal-body">
+          <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Notebook title</th>
+                  <th scope="col">Note count</th>
+                  <th scope="col">User count</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for row in stats %}
+                <tr>
+                  <td>{{ row.title }}</td>
+                  <td>{{ row.count }}</td>
+                  <td>{{ row.users }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
-  {% endfor %}
-  {% if notebooks[0] is defined %}
-  {% else %}
-  <h5>No notebooks</h5>
-  {% endif %}
-  
+  </div>
+</div>
+<hr class="my-4">
+{% for notebook in notebooks %}
+<div class="my-3 p-3 bg-white rounded box-shadow col-md-8">
+  <h4 class="border-bottom border-gray pb-2 mb-0">{{ notebook.title }}</h4>
+  <div class="media text-muted pt-3">
+    <p class="media-body pb-3 mb-0 lh-125">
+      {{ notebook.description }}
+    </p>
+    <small class="d-block text-right mt-3">
+      <a href="{{ url_for('notebook_notes', notebook_id=notebook.id) }}">Check notebook</a>
+    </small>
+  </div>
+  <div>
+    <small class="d-block small text-gray-dark"><b>Last modified:</b> {{ notebook.date_modified }}</small>
+    <small class="d-block small text-gray-dark"><b>Note count:</b> {{ notebook.find_note_count(notebook.id) }}</small>
+    <small class="d-block small text-gray-dark"><b>Users:</b>
+      {% for u in notebook.users %}
+      <span class="badge badge-secondary">{{ u.parent.username }}</span>
+      {% endfor %}
+    </small>
+  </div>
+</div>
+{% endfor %}
+{% if notebooks[0] is defined %}
+{% else %}
+<h5>No notebooks</h5>
+{% endif %}
+
 {% endblock %}

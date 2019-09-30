@@ -10,7 +10,7 @@ from app.auth.models import UserNotebook, User
 @login_required
 def notebook_index():
     notebooks = list(map(lambda x: x.child, current_user.notebooks))
-    return render_template("notebook/list.html", notebooks=notebooks)
+    return render_template("notebook/list.html", notebooks=notebooks, stats=User.user_notebook_note_counts(current_user.id))
 
 @app.route("/notebook/new/")
 @login_required
