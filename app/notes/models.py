@@ -1,11 +1,8 @@
 from app import db
+from app.models import Base
 
-class Note(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    date_created = db.Column(db.DateTime, default=db.func.current_timestamp())
-    date_modified = db.Column(db.DateTime, default=db.func.current_timestamp(),
-    onupdate=db.func.current_timestamp())
-
+class Note(Base):
+    
     title = db.Column(db.String(144), nullable=False)
     body = db.Column(db.String(1000), nullable=False)
 

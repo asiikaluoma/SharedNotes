@@ -1,11 +1,10 @@
 from app import db
+from app.models import Base
 
-class Notebook(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    date_created = db.Column(db.DateTime, default=db.func.current_timestamp())
-    date_modified = db.Column(db.DateTime, default=db.func.current_timestamp(),
-    onupdate=db.func.current_timestamp())
+from sqlalchemy.sql import text
 
+class Notebook(Base):
+    
     title = db.Column(db.String(255), nullable=False)
     description = db.Column(db.String(1000), nullable=True)
 
@@ -17,3 +16,12 @@ class Notebook(db.Model):
     def __init__(self, title, description):
         self.title = title
         self.description = description
+
+    @staticmethod
+    def find_note_count():
+        stmt = text("SELECT COUNT(*) FROM Notebook"
+                    " INNER JOIN Note ON Notebook.id = Note.notebook_id")
+        res = db.engine.execute(stmt)
+  
+        for row in res:
+            return row[0]
