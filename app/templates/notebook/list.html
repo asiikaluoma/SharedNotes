@@ -16,7 +16,7 @@
       </div>
       <div>
         <small class="d-block small text-gray-dark"><b>Last modified:</b> {{ notebook.date_modified }}</small>
-        <small class="d-block small text-gray-dark"><b>Note count:</b> {{ notebook.find_note_count() }}</small>
+        <small class="d-block small text-gray-dark"><b>Note count:</b> {{ notebook.find_note_count(notebook.id) }}</small>
         <small class="d-block small text-gray-dark"><b>Users:</b>
           {% for u in notebook.users %}
             <span class="badge badge-secondary">{{ u.parent.username }}</span>

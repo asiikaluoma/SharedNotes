@@ -29,19 +29,4 @@
   {% else %}
   <h5>No notes!</h5>
   {% endif %}
-
-  <!--<table>
-    <tr>
-      <th>title</th>
-      <th>last update</th>
-    </tr>
-    {% for note in notes %}
-    <tr>
-      <td>{{ note.title }}</td>
-      <td>{{ note.date_modified }}</td>
-      <td><a href="{{ url_for('notes_view', notebook_id=notebook_id, note_id=note.id) }}">Avaa</a> </td>
-      <td><form action="{{ url_for('notes_delete', notebook_id=notebook_id, note_id=note.id) }}" method="POST"><button type="submit">Poista</button></form></td>
-    </tr>
-    {% endfor %}
-  </table>-->
 {% endblock %}

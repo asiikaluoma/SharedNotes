@@ -18,9 +18,10 @@ class Notebook(Base):
         self.description = description
 
     @staticmethod
-    def find_note_count():
+    def find_note_count(id):
         stmt = text("SELECT COUNT(*) FROM Notebook"
-                    " INNER JOIN Note ON Notebook.id = Note.notebook_id")
+                    " INNER JOIN Note ON Notebook.id = Note.notebook_id"
+                    " WHERE Notebook.id=:id").params(id=id)
         res = db.engine.execute(stmt)
   
         for row in res:
