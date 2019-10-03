@@ -17,7 +17,7 @@ Salasana: testi
 - Omistaja on ainoa, joka voi lisätä oikeuksia muille käyttäjille.
 - Omistaja on ainoa joka voi poistaa muistion. 
 - Muistion poisto poistaa myös kaikki muistiinpanot. 
-- Käyttäjä jolle on jaettu oikeudet voi lisätä, muokata ja poistaa muistiinpanoja.
+- Käyttäjä jolle on jaettu oikeudet voi lisätä, muokata ja poistaa muistiinpanoja, mutta vain omista voi muokata muistion tietoja.
 
 ### Ominaisuudet
 

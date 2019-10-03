@@ -1,15 +1,17 @@
-from app import app, db
+from app import app, db, login_manager
 from flask import render_template, request, redirect, url_for
 from app.notebook.models import Notebook
 from sqlalchemy import desc
 from app.notebook.forms import NotebookForm
 from flask_login import login_required, current_user
 from app.auth.models import UserNotebook, User
+from app.notes.models import Note
 
 @app.route("/notebook", methods=["GET"])
 @login_required
 def notebook_index():
     notebooks = list(map(lambda x: x.child, current_user.notebooks))
+    print(notebooks)
     return render_template("notebook/list.html", notebooks=notebooks, stats=User.user_notebook_note_counts(current_user.id))
 
 @app.route("/notebook/new/")
@@ -43,8 +45,12 @@ def notebook_create():
 
 
 @app.route("/notebook/<notebook_id>/edit")
+@login_required
 def notebook_new_edit(notebook_id):
     n = Notebook.query.get(notebook_id)
+
+    if current_user.id is not n.owner_id:
+        return login_manager.unauthorized()
 
     is_owner = False
     if current_user.id == n.owner_id:
@@ -59,6 +65,7 @@ def notebook_new_edit(notebook_id):
 
 
 @app.route("/notebook/<notebook_id>/user", methods=["POST"])
+@login_required
 def notebook_add_user(notebook_id):
     notebook = Notebook.query.get(notebook_id)
     if current_user.id != notebook.owner_id:
@@ -84,16 +91,40 @@ def notebook_add_user(notebook_id):
     return redirect(url_for('notebook_new_edit', notebook_id=notebook_id))
 
 @app.route("/notebook/<notebook_id>/save", methods=["POST"])
+@login_required
 def notebook_edit(notebook_id):
+
+    n = Notebook.query.get(notebook_id)
+
+    if current_user.id is not n.owner_id:
+        return login_manager.unauthorized()
+
     form = NotebookForm(request.form)
 
     if not form.validate():
         return render_template("notebook/edit.html", form=form)
 
-    n = Notebook.query.get(notebook_id)
     n.title = form.title.data
     n.description = form.description.data
 
     db.session().commit()
 
     return redirect(url_for('notebook_index'))
+
+@app.route("/notebook/<notebook_id>/delete", methods=["POST"])
+@login_required
+def notebook_delete(notebook_id):
+
+    n = Notebook.query.get(notebook_id)
+
+    if current_user.id is not n.owner_id:
+        return login_manager.unauthorized()
+    
+    n_id = n.id
+    db.session().query(UserNotebook).filter(UserNotebook.notebook_id==n_id).delete()
+    db.session().query(Note).filter(Note.notebook_id==n_id).delete()
+    Notebook.query.filter_by(id=n_id).delete()
+
+    db.session().commit()
+  
+    return redirect(url_for("notebook_index"))

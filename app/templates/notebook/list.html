@@ -44,6 +44,7 @@
 </div>
 <hr class="my-4">
 {% for notebook in notebooks %}
+{% if notebook is not none %}
 <div class="my-3 p-3 bg-white rounded box-shadow col-md-8">
   <h4 class="border-bottom border-gray pb-2 mb-0">{{ notebook.title }}</h4>
   <div class="media text-muted pt-3">
@@ -64,6 +65,7 @@
     </small>
   </div>
 </div>
+{% endif %}
 {% endfor %}
 {% if notebooks[0] is defined %}
 {% else %}

@@ -4,7 +4,10 @@
   <h3 style="margin-bottom:20px;">{{ notebook.title }}</h3>
   <a class="btn btn-primary" href="{{ url_for('notebook_index') }}">Back</a>
   <a class="btn btn-primary" href="{{ url_for('notes_new', notebook_id=notebook_id) }}">Add a note</a>
+  {% if is_owner %}
   <a class="btn btn-primary" href="{{ url_for('notebook_new_edit', notebook_id=notebook_id) }}">Edit notebook</a>
+  <form style="margin-top:10px;" action="{{ url_for('notebook_delete', notebook_id=notebook_id) }}" method="POST"><button type="submit" class="btn btn-secondary btn-sm">Delete</button></form>
+  {% endif %}
   <hr class="my-4">
 
   {% for note in notes %}
