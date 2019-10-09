@@ -47,7 +47,7 @@ class User(Base):
         " LEFT JOIN usernotebook c ON c.notebook_id=n.id"
         " LEFT JOIN Note no ON no.notebook_id=n.id"
         " WHERE un.account_id=:id"
-        " GROUP BY un.notebook_id").params(id=id)
+        " GROUP BY un.notebook_id, n.title").params(id=id)
         res = db.engine.execute(stmt)
   
         response = []
