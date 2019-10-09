@@ -9,6 +9,15 @@ Sovellus Herokussa: [Linkki](https://shared-notes.herokuapp.com)
 Käyttäjä: testi
 Salasana: testi
 
+## Asennusohje
+
+1. Kloonaa tai lataa projekti
+2. Navigoi projektin juureen ja kansioon app
+3. Luo virtuaaliympäristö komennolla: python3 -m venv venv
+4. Aktivoi ympäristö: source venv/bin/activate
+5. Palaa juureen ja asenna riippuvuudet: pip install -r requirements.txt
+6. Käynnistä sovellus: python app.py
+
 ## Käyttötapaukset
 
 ### Käyttöoikeudet
@@ -17,6 +26,7 @@ Salasana: testi
 - Omistaja on ainoa, joka voi lisätä oikeuksia muille käyttäjille.
 - Omistaja on ainoa joka voi poistaa muistion. 
 - Muistion poisto poistaa myös kaikki muistiinpanot. 
+- Omistaja voi jakaa oikeuksia muistioon muille käyttäjille niiden käyttäjätunnuksilla. Tämä tapahtuu muistion asetuksista.
 - Käyttäjä jolle on jaettu oikeudet voi lisätä, muokata ja poistaa muistiinpanoja, mutta vain omista voi muokata muistion tietoja.
 
 ### Ominaisuudet
@@ -32,6 +42,6 @@ Salasana: testi
     - Muistiinpanon näkymä sisältää nappulan, josta päästään muokkaamaan.
 - Itse muistiinpano sisältää otsikon sekä rungon (teksti, väliotsikot, yms...).
 
-## Jatkokehitys
+## Jatkokehitys, jos jää aikaa
 
 Muistiinpanojen versiointi eli voidaan katsella muutoshistoriaa.
