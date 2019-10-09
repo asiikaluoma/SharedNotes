@@ -11,7 +11,6 @@ def auth_login():
         return render_template("auth/loginform.html", form = LoginForm())
 
     form = LoginForm(request.form)
-    # mahdolliset validoinnit
 
     user = User.query.filter_by(username=form.username.data, password=form.password.data).first()
     if not user:
@@ -33,7 +32,6 @@ def auth_register():
         return render_template("auth/registerform.html", form = RegisterForm())
 
     form = RegisterForm(request.form)
-    # mahdolliset validoinnit
 
     user = User(name=form.name.data, username=form.username.data, password=form.password.data)
 

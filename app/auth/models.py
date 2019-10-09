@@ -4,7 +4,8 @@ from app.models import Base
 from sqlalchemy.sql import text
 
 class UserNotebook(db.Model):
-    __tablename__ = 'UserNotebook'
+    __tablename__ = 'usernotebook'
+
     account_id = db.Column(db.Integer, db.ForeignKey('account.id'), primary_key=True)
     notebook_id = db.Column(db.Integer, db.ForeignKey('notebook.id'), primary_key=True)
     #extra_data = Column(String(50))
@@ -18,6 +19,7 @@ class User(Base):
     name = db.Column(db.String(144), nullable=False)
     username = db.Column(db.String(144), nullable=False)
     password = db.Column(db.String(144), nullable=False)
+    
     notebooks = db.relationship("UserNotebook", back_populates="parent")
 
     def __init__(self, name, username, password):
@@ -40,9 +42,9 @@ class User(Base):
     @staticmethod
     def user_notebook_note_counts(id):
         stmt = text("SELECT un.notebook_id, n.title, count(distinct no.id), count(distinct c.account_id)"
-        " FROM UserNotebook un"
+        " FROM usernotebook un"
         " LEFT JOIN Notebook n ON n.id=un.notebook_id"
-        " LEFT JOIN UserNotebook c ON c.notebook_id=n.id"
+        " LEFT JOIN usernotebook c ON c.notebook_id=n.id"
         " LEFT JOIN Note no ON no.notebook_id=n.id"
         " WHERE un.account_id=:id"
         " GROUP BY un.notebook_id").params(id=id)
