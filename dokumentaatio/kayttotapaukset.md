@@ -2,11 +2,14 @@
 
 ### Ominaisuudet
 
-- Kirjautuneen käyttäjän etusivulla listaus muistioista, jokta hän on luonut tai joihin hänet on lisätty
+- Kirjautuneen käyttäjän etusivulla listaus muistioista, jotkat hän on luonut tai joihin hänet on lisätty
     - Listauksessa näytetään muistion nimi, kuvaus, käyttäjät, viimeisin muokkauspäivä
-- Muistiota klikkaamalla pääsee sen näkymään
-    - Näkumä sisältää otsikon, kuvauksen sekä listauksen muistiosta. 
-    - Näkymä sisältää nappulan, jota klikkaamalla päästään muokkaamaan muistion tietoja.
+- Käyttäjän näkymä sisältää myös "statistics" -napin, josta pääsee tutkimaan hänen tiliinsä liittyviä statistiikoita. Näkymässä näytetään taulukko, jossa riveillä muistiot. Sarakkeina muistiinpanojen lukumäärä sekä käyttäjien lukumäärä, joille oikedet jaettu.
+- Listauksesta muistiota klikkaamalla pääsee sen näkymään
+    - Se sisältää otsikon, kuvauksen sekä listauksen muistiosta. 
+    - Se sisältää myös napin, josta päästään luomaan uusi muistiinpano.
+    - Mustion voi myös poistaa "delete" -napista. Tämä poistaa myös kaikki siihen liittyvät muistiinpanot.
+    - Näkymä sisältää nappulan, jota klikkaamalla päästään muokkaamaan muistion tietoja (otsikko, kuvaus, käyttäjät).
     - Muistion tietojen lisäksi voidaan lisätä muille käyttäjille oikeuksia.
 - Kaikki listauksesta ovat lajiteltu viimeisen muokkauksen mukaan
 - Muistiinpanolistauksesta siirrytään muistiinpanoa kliikkammalla sen omaan näkymään
