@@ -24,7 +24,7 @@ CREATE TABLE notebook (
 ```
 
 ```
-CREATE TABLE "UserNotebook" (
+CREATE TABLE usernotebooks (
         account_id INTEGER NOT NULL, 
         notebook_id INTEGER NOT NULL, 
         PRIMARY KEY (account_id, notebook_id), 
