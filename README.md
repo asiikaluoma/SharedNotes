@@ -24,7 +24,14 @@ Oman käyttäjän voi luoda herokusssa "Sign Up" -linkistä.
 5. Palaa juureen ja asenna riippuvuudet: pip install -r requirements.txt
 6. Käynnistä sovellus: python app.py
 
+### Asennus herokuun
+
+1. Tarvitset github repositorion koodille, heroku CLI-työkalut, heroku tilin.
+2. Tämän jälkeen voit luoda heroku projektin: heroku create <syötä haluttu nimi tähän>
+3. Pushaa sovellus herokuun: git push heroku master
 
 ## Jatkokehitys, jos jää aikaa
 
 Muistiinpanojen versiointi eli voidaan katsella muutoshistoriaa.
+
+### Puutteet
