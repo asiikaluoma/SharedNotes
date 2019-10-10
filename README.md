@@ -3,6 +3,7 @@
 Sovelluksella käyttäjät voivat luoda jaettuja muistioita, jotka sisältävät useita muistiinpanoja. Käyttäjä voi jakaa muistion useamman käyttäjän kanssa. Muistioihin lisätään muistiinpanoja. 
 
 Tietokantakaavio: [Linkki](https://github.com/asiikaluoma/SharedNotes/blob/master/dokumentaatio/tietokantakaavio.png)
+
 Koodit taulujen luomiseen: [Linkki](https://github.com/asiikaluoma/SharedNotes/blob/master/dokumentaatio/tietokantataulut.md)
 
 Käyttötapauksia ja ominaisuuksia: [Linkki](https://github.com/asiikaluoma/SharedNotes/blob/master/dokumentaatio/kayttotapaukset.md)
