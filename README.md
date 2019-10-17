@@ -35,3 +35,5 @@ Oman käyttäjän voi luoda herokusssa "Sign Up" -linkistä.
 Muistiinpanojen versiointi eli voidaan katsella muutoshistoriaa.
 
 ### Puutteet
+
+Muistiinpanoja pitäisi pystyä muokkaamaan samasta näkymästä mistä niitä luetaan. Ei pitäisi joutua siis joka kertaa siirtymään "Edit note" linkistä muokkausnäkymään. 

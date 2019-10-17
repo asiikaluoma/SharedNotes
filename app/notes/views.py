@@ -102,6 +102,9 @@ def notes_new_edit(note_id):
 @login_required
 def notes_edit(note_id):
 
+    note = Note.query.get(note_id)
+    notebook_id = note.notebook_id
+
     if not check_user_access(notebook_id):
         return login_manager.unauthorized()
 
@@ -110,7 +113,6 @@ def notes_edit(note_id):
     if not form.validate():
         return render_template("notes/edit.html", form=form)
 
-    note = Note.query.get(note_id)
     note.title = form.title.data
     note.body = form.body.data
 
