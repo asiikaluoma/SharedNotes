@@ -1,6 +1,6 @@
 # SharedNotes
 
-Sovelluksella käyttäjät voivat luoda jaettuja muistioita, jotka sisältävät useita muistiinpanoja. Käyttäjä voi jakaa muistion useamman käyttäjän kanssa. Muistioihin lisätään muistiinpanoja. 
+Sovelluksella käyttäjät voivat luoda jaettuja muistioita, jotka sisältävät muistiinpanoja. Muistion luoja voi jakaa muistion muiden käyttäjien kanssa, jolloin myös he voivat lisätä siihen muistiinpanoja.
 
 Tietokantakaavio: [Linkki](https://github.com/asiikaluoma/SharedNotes/blob/master/dokumentaatio/tietokantakaavio.png)
 
