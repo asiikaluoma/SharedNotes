@@ -6,11 +6,11 @@
     - Listauksessa näytetään muistion nimi, kuvaus, käyttäjät, viimeisin muokkauspäivä
 - Käyttäjän näkymä sisältää myös "statistics" -napin, josta pääsee tutkimaan hänen tiliinsä liittyviä statistiikoita. Näkymässä näytetään taulukko, jossa riveillä muistiot. Sarakkeina muistiinpanojen lukumäärä sekä käyttäjien lukumäärä, joille oikedet jaettu.
 - Listauksesta muistiota klikkaamalla pääsee sen näkymään
-    - Se sisältää otsikon, kuvauksen sekä listauksen muistiosta. 
-    - Se sisältää myös napin, josta päästään luomaan uusi muistiinpano.
+    - Se sisältää otsikon, kuvauksen sekä listauksen muistiinpanoista. 
+    - Se sisältää myös napin, josta pääsee luomaan uuden muistiinpanon.
     - Mustion voi myös poistaa "delete" -napista. Tämä poistaa myös kaikki siihen liittyvät muistiinpanot.
-    - Näkymä sisältää nappulan, jota klikkaamalla päästään muokkaamaan muistion tietoja (otsikko, kuvaus, käyttäjät).
-    - Muistion tietojen lisäksi voidaan lisätä muille käyttäjille oikeuksia.
+    - Näkymä sisältää "muokkaa" -nappulan, jota klikkaamalla päästään muokkaamaan muistion tietoja (otsikko, kuvaus, käyttäjät).
+    - Muokkaa näkymästä muistion omien tietojen lisäksi voidaan lisätä muille käyttäjille oikeuksia.
 - Kaikki listauksesta ovat lajiteltu viimeisen muokkauksen mukaan
 - Muistiinpanolistauksesta siirrytään muistiinpanoa kliikkammalla sen omaan näkymään
     - Muistiinpanon näkymä sisältää nappulan, josta päästään muokkaamaan.
