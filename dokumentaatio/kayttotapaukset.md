@@ -25,12 +25,12 @@
 - Omistaja voi jakaa oikeuksia muistioon muille käyttäjille niiden käyttäjätunnuksilla. Tämä tapahtuu muistion asetuksista.
 - Käyttäjä jolle on jaettu oikeudet voi lisätä, muokata ja poistaa muistiinpanoja, mutta vain omista voi muokata muistion tietoja.
 
-### Käyttöohjeet
+## Käyttöohjeet
 
-#### Kirjautuminen ja rekisteröityminen
+### Kirjautuminen ja rekisteröityminen
 
 Sovelluksen kaikki toiminnallisuus vaatii kirjautumista. Jos käyttäjä ei ole kirjautunut, hänet ohjataan kirjatumissivulle. Rekisteröityminen on yksinkertaista. Näkymään pääsee navigaation palkin oikeasta reunasta. Rekisteröityessä kysytään nimi, käyttäjätunnus sekä salasana. Käyttäjätunnusta ja salasanaa käytetään kirjautumiseen.
 
-#### Kotinäkymä
+### Kotinäkymä
 
 Kirjautuneen käyttäjän kotinäkymä sisältää listauksen muistiinpanoista, jotka hän on luonut tai joihin hänellä on oikeudet. Muistiota pääsee tarkastelemeen "Open notebook" -nappulasta.
