@@ -2,7 +2,7 @@
 
 ### Kirjautuminen ja rekisteröityminen
 
-![Kirjautuminen](.images/login_view.png)
+![Kirjautuminen](https://github.com/asiikaluoma/SharedNotes/blob/master/dokumentaatio/images/login_view.png)
 
 Sovelluksen kaikki toiminnallisuus vaatii kirjautumista. Jos käyttäjä ei ole kirjautunut, hänet ohjataan kirjatumissivulle. Rekisteröityminen on yksinkertaista. Näkymään pääsee navigaation palkin oikeasta reunasta. Rekisteröityessä kysytään nimi, käyttäjätunnus sekä salasana. Käyttäjätunnusta ja salasanaa käytetään kirjautumiseen.
 
