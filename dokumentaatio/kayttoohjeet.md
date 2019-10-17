@@ -14,9 +14,28 @@ Kirjautumisen jälkeen navigaatiopalkin oikeasta yläkulmasta löytyy aina "Log 
 
 Kirjautuneen käyttäjän kotinäkymä sisältää listauksen muistiinpanoista, jotka hän on luonut tai joihin hänellä on oikeudet. Muistiota pääsee tarkastelemeen "Open notebook" -nappulasta. Lisäksi "Check statistics" -nappulasta päästään tarkastelemeen muistiohin liittyviä tietoja.
 
-### Muistio näkymä
+### Muistion näkymä
 
 ![Muistion näkymä](https://github.com/asiikaluoma/SharedNotes/blob/master/dokumentaatio/images/notebook_view.png)
 
+Näkymä sisältää listauksen kyseiseen muistioon littyvistä muistiinpanoista sekä muistion nimen alla on nappeja.
+
+#### Napit
+
+- "Back" napista siirrytään takaisin kotinäkymään.
+- "Add note" napista siirrytän luomaan uusia muistiinpanoja.
+- "Edit notebook" napista päästään muokkaamaan muistion tietoja sekä hallitsemaan käyttäjiä.
+- "Delete" nappi poistaa muistion sekä kaikki siihen liittyvät muistiinpanot.
+
+"Edit notebook" sekä "Delet" napit ovat näkyvissä vain muistion omistajalle.
+
+#### Listaus
+
+Listauksessa on jokaisen muistiinpanon osalta siihen linkki "Open". Jokaisessa elementissä on myös otsikko, sisällöstä ensimmäiset 100 merkkiä, viimeinen muokkauspäivä, sen luoneen käyttäjän nimi ja "Delete" -nappula, josta sen voi poistaa.
 
 
+### Muistion muokkausnäkymä
+
+![Muokkausnäkymä](https://github.com/asiikaluoma/SharedNotes/blob/master/dokumentaatio/images/edit_notebook_view.png)
+
+Näkymässä voi muokata otsikkoa sekä kuvausta. Lisäksi käyttäjille voi lisätä oikeuksia "Enter username" -kentästä. Kenttä hyväksyy vain olemassaolevat käyttäjätunnukset. 
