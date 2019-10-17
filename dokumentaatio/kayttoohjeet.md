@@ -41,6 +41,6 @@ Listauksessa on jokaisen muistiinpanon osalta siihen linkki "Open". Jokaisessa e
 
 ### Muistion muokkausnäkymä
 
-![Muokkausnäkymä](https://github.com/asiikaluoma/SharedNotes/blob/master/dokumentaatio/images/edit_notebook_view.png)
+![Muokkausnäkymä](https://github.com/asiikaluoma/SharedNotes/blob/master/dokumentaatio/images/edit_notebook_view2.png)
 
 Näkymässä voi muokata otsikkoa sekä kuvausta. Lisäksi käyttäjille voi lisätä oikeuksia "Enter username" -kentästä. Kenttä hyväksyy vain olemassaolevat käyttäjätunnukset. Sinisellä näkyy omistajan käyttänimi ja tätä ei voi poistaa. Muut käyttäjät ovat listattu harmaalla pohjalla ja tätä nappia klikkaamalla käyttäjän oikeudet voidaan poistaa
