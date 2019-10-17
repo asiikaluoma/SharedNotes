@@ -87,7 +87,28 @@ def notebook_add_user(notebook_id):
 
     db.session().commit()
   
+    return redirect(url_for('notebook_new_edit', notebook_id=notebook_id))
 
+@app.route("/notebook/<notebook_id>/user/<user_id>", methods=["POST"])
+@login_required
+def notebook_delete_user(notebook_id,user_id):
+    notebook = Notebook.query.get(notebook_id)
+    if current_user.id != notebook.owner_id:
+        return redirect(url_for('notebook_new_edit', notebook_id=notebook_id))
+    user = User.query.filter_by(id=user_id).first()
+
+    if user is None:
+        return redirect(url_for('notebook_new_edit', notebook_id=notebook_id, error="User not found."))
+
+    if user_id == notebook.owner_id:
+        return redirect(url_for('notebook_new_edit', notebook_id=notebook_id, error="Cannot delete user right from owner."))
+
+    if any(x.notebook_id == notebook_id for x in user.notebooks):
+        return redirect(url_for('notebook_new_edit', notebook_id=notebook_id, error="User already added."))
+    
+    db.session().query(UserNotebook).filter(UserNotebook.account_id==user_id, UserNotebook.notebook_id==notebook_id).delete()
+    db.session().commit()
+  
     return redirect(url_for('notebook_new_edit', notebook_id=notebook_id))
 
 @app.route("/notebook/<notebook_id>/save", methods=["POST"])

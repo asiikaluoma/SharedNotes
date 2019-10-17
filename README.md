@@ -8,6 +8,8 @@ Koodit taulujen luomiseen: [Linkki](https://github.com/asiikaluoma/SharedNotes/b
 
 Käyttötapauksia ja ominaisuuksia: [Linkki](https://github.com/asiikaluoma/SharedNotes/blob/master/dokumentaatio/kayttotapaukset.md)
 
+Käyttöohjeet: [Linkki](https://github.com/asiikaluoma/SharedNotes/blob/master/dokumentaatio/kayttoohjeet.md)
+
 Sovellus Herokussa: [Linkki](https://shared-notes.herokuapp.com)
 
 Käyttäjä: testi

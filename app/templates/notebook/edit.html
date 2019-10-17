@@ -49,8 +49,12 @@
                   </div>
             </form>
             <p><b>Added users:</b></p>
-            {% for user in  notebook.users %}
-            <span style="padding: 10px" class="badge badge-secondary">{{ user.parent.username }}</span>
+            {% for user in notebook.users %}
+            {% if user.parent.id == notebook.owner_id  %}
+            <span style="padding: 10px" class="badge badge-primary">{{ user.parent.username }}</span>
+            {% else %}
+            <form style="margin-left: 5px;display:inline;" action="{{ url_for('notebook_delete_user', notebook_id=notebook.id, user_id=user.parent.id) }}" method="POST"><button class="del btn btn-secondary" type="submit"><i style="margin-right:10px;" class="fa fa-close"></i>{{ user.parent.username }}</button></form>
+            {% endif %}
             {% endfor %}
             {% if error is not none %}
             <p style="color:red">{{ error }}</p>
