@@ -13,6 +13,15 @@
                                 {{ form.title }}
                           </td>
                     </tr>
+                  <tr>
+                        <td>
+                              <ul>
+                                    {% for error in form.title.errors %}
+                                    <li>{{ error }}</li>
+                                    {% endfor %}
+                              </ul>
+                        </td>
+                  </tr>
                     <tr>
                           <td>
                                 {{ form.body.label }}
@@ -21,6 +30,15 @@
                                 {{ form.body }}
                           </td>
                     </tr>
+                  <tr>
+                        <td>
+                              <ul>
+                                    {% for error in form.body.errors %}
+                                    <li>{{ error }}</li>
+                                    {% endfor %}
+                              </ul>
+                        </td>
+                  </tr>
                     <tr>
                           <td colspan="2">
                                 <input class="btn btn-secondary" type="submit" value="Edit note" />

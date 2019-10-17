@@ -123,7 +123,7 @@ def notebook_edit(notebook_id):
     form = NotebookForm(request.form)
 
     if not form.validate():
-        return render_template("notebook/edit.html", form=form)
+        return render_template("notebook/edit.html", notebook=n, form=form, is_owner=True, error=None)
 
     n.title = form.title.data
     n.description = form.description.data

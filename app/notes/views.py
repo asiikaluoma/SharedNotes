@@ -111,7 +111,7 @@ def notes_edit(note_id):
     form = NoteForm(request.form)
 
     if not form.validate():
-        return render_template("notes/edit.html", form=form)
+        return render_template("notes/edit.html", note=note, form=form)
 
     note.title = form.title.data
     note.body = form.body.data
