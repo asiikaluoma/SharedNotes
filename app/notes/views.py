@@ -86,11 +86,13 @@ def notes_delete(notebook_id, note_id):
 @app.route("/notebook/notes/<note_id>/edit")
 @login_required
 def notes_new_edit(note_id):
-    
+
+    n = Note.query.get(note_id)
+    notebook_id = n.notebook_id
+
     if not check_user_access(notebook_id):
         return login_manager.unauthorized()
 
-    n = Note.query.get(note_id)
     form = NoteForm()
     form.title.data = n.title
     form.body.data = n.body
